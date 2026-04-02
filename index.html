@@ -3,133 +3,120 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Stephen Mar — Entrepreneur & Investor | Bitcoin • DeFi • Asymmetric Thinking">
-  <title>Stephen Mar — Entrepreneur & Investor</title>
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="description" content="Stephen Mar — Entrepreneur & Investor | Crypto • DeFi • Web3">
+  <title>Stephen Mar — Entrepreneur & Investor | Crypto • DeFi • Web3</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
+    body { background-color: #0a0a0a; color: #ffffff; font-family: Inter, system-ui, sans-serif; scroll-behavior: smooth; }
+    a { transition: color 0.3s; }
+    a:hover { color: #00f5ff; }
+    .hero-headshot { width: 300px; height: 300px; object-fit: cover; border-radius: 9999px; border: 4px solid #f5c04a; }
+    .card { background-color: #111111; border-radius: 12px; padding: 1.5rem; transition: transform 0.3s, box-shadow 0.3s; }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,245,255,0.2); }
   </style>
 </head>
-<body class="bg-[#0a0a0a] text-white font-sans">
+<body class="relative">
 
   <!-- Navbar -->
-  <nav class="sticky top-0 z-50 bg-[#0a0a0a] border-b border-gray-800 px-6 md:px-20 flex items-center justify-between h-16">
-    <div class="font-bold text-xl text-white">Stephen Mar</div>
-    <ul class="hidden md:flex space-x-8 text-gray-300 font-semibold">
-      <li><a href="#about" class="hover:text-teal-400">About</a></li>
-      <li><a href="#insights" class="hover:text-teal-400">Insights</a></li>
-      <li><a href="#conviction" class="hover:text-teal-400">Conviction</a></li>
-      <li><a href="#connect" class="hover:text-teal-400">Connect</a></li>
-    </ul>
-    <a href="https://x.com/iamstephenmar" target="_blank" class="ml-4 px-4 py-2 border-2 border-teal-400 rounded hover:bg-teal-400 hover:text-black transition">Follow on X</a>
+  <nav class="fixed top-0 left-0 right-0 flex items-center justify-between px-8 py-4 bg-black z-50 border-b border-gray-800">
+    <div class="text-xl font-bold">Stephen Mar</div>
+    <div class="space-x-6 hidden md:flex">
+      <a href="#about">About</a>
+      <a href="#insights">Insights</a>
+      <a href="#conviction">Conviction</a>
+      <a href="#connect">Connect</a>
+    </div>
+    <a href="https://x.com/iamstephenmar" target="_blank" class="ml-4 px-4 py-2 bg-teal-400 text-black rounded font-semibold hover:bg-teal-500 transition">Follow on X</a>
   </nav>
 
   <!-- Hero Section -->
-  <section id="hero" class="min-h-screen flex flex-col md:flex-row items-center justify-center px-6 md:px-20">
-    
-    <!-- Left: Text -->
-    <div class="flex-1 text-center md:text-left space-y-4">
+  <section class="flex flex-col md:flex-row items-center justify-between min-h-screen px-8 md:px-20 pt-24">
+    <div class="md:w-1/2 space-y-4">
       <h1 class="text-5xl md:text-6xl font-bold">Stephen Mar</h1>
-      <h2 class="text-2xl md:text-3xl font-semibold text-gray-300">Entrepreneur & Investor</h2>
-      <p class="text-teal-400 text-xl md:text-2xl font-mono">Markets first. Conviction always.</p>
-      <p class="text-gray-400 text-lg md:text-xl mt-2">Bitcoin | DeFi | Asymmetric Thinking</p>
-      <div class="mt-6 flex flex-col md:flex-row gap-4 justify-center md:justify-start">
-        <a href="#insights" class="px-6 py-3 bg-teal-400 text-black font-semibold rounded hover:bg-teal-500 transition">Explore My Insights</a>
-        <a href="https://x.com/iamstephenmar" target="_blank" class="px-6 py-3 border-2 border-teal-400 rounded hover:bg-teal-400 hover:text-black transition">Follow on X</a>
+      <h2 class="text-2xl md:text-3xl text-gray-300">Entrepreneur & Investor</h2>
+      <p class="text-xl md:text-2xl font-mono text-teal-400">Markets first. Conviction always.</p>
+      <p class="text-gray-400">Crypto | DeFi | Web3</p>
+      <div class="space-x-4 mt-4">
+        <a href="#insights" class="px-6 py-3 border border-teal-400 text-teal-400 rounded font-semibold hover:bg-teal-400 hover:text-black transition">Explore Insights</a>
+        <a href="https://x.com/iamstephenmar" target="_blank" class="px-6 py-3 bg-teal-400 text-black rounded font-semibold hover:bg-teal-500 transition">Follow on X</a>
       </div>
     </div>
-
-    <!-- Right: Headshot -->
-    <div class="flex-1 mt-10 md:mt-0 md:ml-10 flex justify-center md:justify-end">
-      <img src="assets/images/headshot.jpg" alt="Stephen Mar" class="w-56 h-56 md:w-72 md:h-72 rounded-full border-4 border-teal-400 object-contain hover:scale-105 transition-transform duration-500">
+    <div class="md:w-1/2 mt-12 md:mt-0 flex justify-center">
+      <img src="assets/images/headshot.jpg" alt="Stephen Mar Headshot" class="hero-headshot">
     </div>
   </section>
 
   <!-- About Section -->
-  <section id="about" class="py-20 px-6 md:px-20 flex flex-col md:flex-row items-center bg-[#111111]">
-    <div class="flex-1 md:pr-10">
-      <h2 class="text-3xl font-bold mb-4 text-teal-400">About Me</h2>
-      <p class="text-gray-300 text-lg leading-relaxed">Entrepreneur & investor with conviction-driven strategies. I back protocols where asymmetric outcomes are engineered. Markets are my first language; I prioritize rigor, clarity, and depth over hype. Bitcoin, DeFi, and Web3 capital are my primary focus areas. I approach each opportunity strategically, always thinking multiple steps ahead.</p>
+  <section id="about" class="px-8 md:px-20 py-24 flex flex-col md:flex-row items-center space-y-8 md:space-y-0 md:space-x-12">
+    <div class="md:w-1/2">
+      <img src="assets/images/headshot.jpg" alt="Stephen Mar Headshot" class="hero-headshot mx-auto md:mx-0">
+    </div>
+    <div class="md:w-1/2 space-y-4 text-gray-300">
+      <h2 class="text-3xl font-bold">About</h2>
+      <p>Stephen Mar is a conviction-driven investor in crypto and Web3, backing opportunities engineered for asymmetric outcomes. Markets are his first language, and long-term edge is the only metric that matters. His investment philosophy is sharp, no-nonsense, and focused on structural resilience and high-conviction decisions.</p>
     </div>
   </section>
 
   <!-- Conviction Section -->
-  <section id="conviction" class="py-20 px-6 md:px-20">
-    <h2 class="text-3xl font-bold mb-8 text-teal-400 text-center">Conviction Compounds</h2>
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="p-6 bg-[#111111] rounded shadow hover:shadow-lg transition">
-        <p class="text-gray-300 font-mono text-lg">“Conviction compounds.”</p>
-        <p class="text-gray-500 text-sm mt-2">— X Post</p>
-      </div>
-      <div class="p-6 bg-[#111111] rounded shadow hover:shadow-lg transition">
-        <p class="text-gray-300 font-mono text-lg">“If stablecoin rewards are suddenly a problem, that already tells they’re working.”</p>
-        <p class="text-gray-500 text-sm mt-2">— X Post</p>
-      </div>
-      <div class="p-6 bg-[#111111] rounded shadow hover:shadow-lg transition">
-        <p class="text-gray-300 font-mono text-lg">“Markets first, conviction always.”</p>
-        <p class="text-gray-500 text-sm mt-2">— X Post</p>
-      </div>
+  <section id="conviction" class="px-8 md:px-20 py-24 bg-black space-y-8">
+    <h2 class="text-3xl font-bold text-teal-400 text-center">Conviction Compounds</h2>
+    <div class="grid md:grid-cols-3 gap-6 mt-8">
+      <div class="card">Conviction compounds.</div>
+      <div class="card">Markets first. Conviction always.</div>
+      <div class="card">Back protocols with asymmetric upside.</div>
+      <div class="card">Structural resilience beats hype.</div>
+      <div class="card">Patience is a competitive edge.</div>
+      <div class="card">Edge is the only currency.</div>
     </div>
   </section>
 
   <!-- Insights Section -->
-  <section id="insights" class="py-20 px-6 md:px-20 bg-[#111111]">
-    <h2 class="text-3xl font-bold mb-8 text-teal-400 text-center">Market Thinking</h2>
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="p-6 bg-[#0a0a0a] rounded shadow hover:shadow-lg transition">
-        <p class="text-gray-300 font-mono">Structural resilience matters more than short-term volatility. Focus on absorption, not hype.</p>
-        <a href="https://x.com/iamstephenmar" target="_blank" class="text-teal-400 mt-2 inline-block">Read more</a>
-      </div>
-      <div class="p-6 bg-[#0a0a0a] rounded shadow hover:shadow-lg transition">
-        <p class="text-gray-300 font-mono">Bitcoin remains the ultimate asymmetric opportunity for long-term value preservation.</p>
-        <a href="https://x.com/iamstephenmar" target="_blank" class="text-teal-400 mt-2 inline-block">Read more</a>
-      </div>
-      <div class="p-6 bg-[#0a0a0a] rounded shadow hover:shadow-lg transition">
-        <p class="text-gray-300 font-mono">Web3 capital requires patience and conviction — not the latest meme trend.</p>
-        <a href="https://x.com/iamstephenmar" target="_blank" class="text-teal-400 mt-2 inline-block">Read more</a>
-      </div>
+  <section id="insights" class="px-8 md:px-20 py-24 space-y-8">
+    <h2 class="text-3xl font-bold text-teal-400 text-center">Market Thinking</h2>
+    <div class="grid md:grid-cols-3 gap-6 mt-8">
+      <div class="card">Crypto market absorption indicates structural strength.</div>
+      <div class="card">DeFi protocols with organic yield compound long-term value.</div>
+      <div class="card">Web3 infrastructure adoption reflects asymmetric opportunity.</div>
+      <div class="card">Volatility is a feature, not a bug — position accordingly.</div>
     </div>
   </section>
 
   <!-- Focus Areas -->
-  <section id="focus" class="py-20 px-6 md:px-20">
-    <h2 class="text-3xl font-bold mb-8 text-teal-400 text-center">Focus Areas</h2>
+  <section id="focus" class="px-8 md:px-20 py-24 bg-black">
+    <h2 class="text-3xl font-bold text-teal-400 text-center mb-12">Focus Areas</h2>
     <div class="grid md:grid-cols-4 gap-6 text-center">
-      <div class="p-6 bg-[#111111] rounded shadow">
-        <h3 class="text-xl font-semibold mb-2">Bitcoin</h3>
-        <p class="text-gray-300">Ultimate asymmetric hedge and store of value.</p>
+      <div class="card">
+        <h3 class="font-bold text-xl mb-2">Crypto</h3>
+        <p>Long-term structural bets in digital assets with asymmetric potential.</p>
       </div>
-      <div class="p-6 bg-[#111111] rounded shadow">
-        <h3 class="text-xl font-semibold mb-2">DeFi</h3>
-        <p class="text-gray-300">Protocols with engineered asymmetric outcomes.</p>
+      <div class="card">
+        <h3 class="font-bold text-xl mb-2">DeFi</h3>
+        <p>Protocols that compound yield and generate real economic resilience.</p>
       </div>
-      <div class="p-6 bg-[#111111] rounded shadow">
-        <h3 class="text-xl font-semibold mb-2">Web3 Capital</h3>
-        <p class="text-gray-300">Strategic capital deployment in emerging networks.</p>
+      <div class="card">
+        <h3 class="font-bold text-xl mb-2">Web3</h3>
+        <p>Infrastructure enabling decentralized sovereignty and scalable networks.</p>
       </div>
-      <div class="p-6 bg-[#111111] rounded shadow">
-        <h3 class="text-xl font-semibold mb-2">Asymmetric Opportunities</h3>
-        <p class="text-gray-300">High conviction bets where upside dominates downside risk.</p>
+      <div class="card">
+        <h3 class="font-bold text-xl mb-2">Asymmetric Opportunities</h3>
+        <p>Investments where high conviction drives outsized long-term returns.</p>
       </div>
     </div>
   </section>
 
   <!-- Connect Section -->
-  <section id="connect" class="py-20 px-6 md:px-20 bg-[#111111]">
-    <h2 class="text-3xl font-bold mb-6 text-teal-400 text-center">Connect</h2>
-    <p class="text-gray-300 text-center mb-6">Receive asymmetric market notes</p>
-    <div class="flex justify-center mb-6">
-      <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l bg-[#0a0a0a] border border-gray-700 text-gray-200" />
-      <button class="px-4 py-2 rounded-r bg-teal-400 hover:bg-teal-500 text-black font-semibold">Subscribe</button>
+  <section id="connect" class="px-8 md:px-20 py-24 space-y-6">
+    <h2 class="text-3xl font-bold text-teal-400 text-center">Connect</h2>
+    <p class="text-center text-gray-300">Receive asymmetric market notes:</p>
+    <div class="flex justify-center">
+      <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l border border-gray-700 bg-black text-white focus:outline-none">
+      <button class="px-4 py-2 bg-teal-400 text-black rounded-r font-semibold hover:bg-teal-500 transition">Subscribe</button>
     </div>
-    <div class="flex justify-center gap-6">
+    <div class="text-center space-x-4 mt-4">
       <a href="https://x.com/iamstephenmar" target="_blank" class="text-teal-400 font-semibold">X</a>
-      <a href="mailto:your-email@example.com" class="text-teal-400 font-semibold">Email</a>
+      <a href="mailto:hello@stephenmar.com" class="text-gray-400 font-semibold">Email</a>
     </div>
-    <p class="text-gray-500 text-center mt-6">Markets first. Conviction always.</p>
+    <p class="text-center text-gray-500 mt-6">Markets first. Conviction always.</p>
   </section>
 
 </body>

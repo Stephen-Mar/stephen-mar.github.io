@@ -1,22 +1,39 @@
-# Stephen Mar — Personal Brand Website
-
-A clean, calm, and premium personal brand site for Stephen Mar — entrepreneur and investor focused on crypto, DeFi, and Web3.
-
-## Design Features
-- Entirely new vertical narrative layout with generous whitespace and elegant flow
-- Soft warm off-white + tan color palette (easy on the eyes)
-- Large centered circular headshot in the hero section (optimized to show the full head without cropping)
-- Full-width thinking section, simple focus grid, and minimalist connect area
-- Built with Tailwind CSS + custom `styles.css` for premium styling
-
-## File Structure
-- `index.html` — Main single-page site
-- `styles.css` — Custom styles (including headshot fixes)
-- `assets/images/headshot.jpg` — Your profile image
+# Stephen Mar — Personal Website
 
 ## Deployment (GitHub Pages)
-1. Upload `index.html`, `styles.css`, and the `assets/images/` folder containing `headshot.jpg`.
-2. Go to **Settings → Pages** → Deploy from main branch → `/ (root)`.
-3. Hard refresh the live site (Ctrl/Cmd + Shift + R) after deployment.
 
-Made with quiet confidence and strategic clarity.
+1. Create a new repository
+2. Upload:
+   - index.html
+   - assets/images/headshot.jpg
+3. Go to Settings → Pages
+4. Select:
+   - Branch: main
+   - Folder: /root
+5. Save
+
+Your site will be live at:
+https://yourusername.github.io/repository-name/
+
+## What’s Already Set
+
+- Profile image connected → `assets/images/headshot.jpg`
+- Colors already configured (navy + gold premium theme)
+- Blog content pre-filled (you can edit anytime)
+- Social links added (just replace with your real links)
+
+## Final Edits (Quick)
+
+### Update Social Links
+Search for:
+
+https://twitter.com/@iamstephenmar
+
+Replace with your real profiles.
+
+---
+
+## Notes
+- No build tools required
+- Fully mobile responsive
+- Clean, premium minimalist design

@@ -24,9 +24,27 @@
   <style>
     html { scroll-behavior: smooth; }
 
+    /* Smooth reveal animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Premium hover */
     .card-hover:hover {
-      transform: translateY(-6px);
-      transition: all 0.35s ease;
+      transform: translateY(-8px) scale(1.01);
+      transition: all 0.3s ease;
+    }
+
+    /* Hero gradient glow */
+    .hero-bg {
+      background: radial-gradient(circle at top right, rgba(194,163,93,0.15), transparent 40%);
     }
   </style>
 </head>
@@ -52,12 +70,11 @@
   </div>
 </header>
 
-<!-- HERO + SIDE LAYOUT (PC UPGRADE) -->
-<section class="pt-32 pb-24 px-6">
+<!-- HERO -->
+<section class="pt-32 pb-24 px-6 hero-bg">
   <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
 
-    <!-- LEFT -->
-    <div>
+    <div class="reveal">
       <h1 class="text-5xl md:text-6xl font-bold text-primary mb-6">
         Stephen Mar
       </h1>
@@ -67,7 +84,7 @@
       </p>
 
       <div class="flex gap-4 flex-wrap">
-        <a href="#insights" class="px-6 py-3 bg-primary text-white rounded-lg">
+        <a href="#insights" class="px-6 py-3 bg-primary text-white rounded-lg shadow">
           Explore Insights
         </a>
 
@@ -78,17 +95,17 @@
       </div>
     </div>
 
-    <!-- RIGHT (INSIGHT PANEL) -->
-    <div class="bg-white p-8 rounded-xl shadow-sm">
-      <h3 class="text-primary font-semibold mb-4">Current Focus</h3>
-      <p class="text-sm text-gray-600 mb-4">
-        Monitoring liquidity shifts, DeFi structural evolution, and emerging narratives
-        shaping the next crypto cycle.
+    <!-- FEATURED INSIGHT -->
+    <div class="bg-white p-8 rounded-xl shadow-sm reveal">
+      <h3 class="text-primary font-semibold mb-4">Featured Insight</h3>
+
+      <p class="text-gray-600 mb-4">
+        The market doesn’t reward the most informed — it rewards the best positioned.
       </p>
 
-      <h3 class="text-primary font-semibold mb-2">Core Approach</h3>
-      <p class="text-sm text-gray-600">
-        Position early. Think independently. Act with conviction.
+      <p class="text-sm text-gray-500">
+        Most participants wait for confirmation. By then, opportunity has already moved.
+        The edge comes from clarity before consensus.
       </p>
     </div>
 
@@ -96,7 +113,7 @@
 </section>
 
 <!-- ABOUT -->
-<section id="about" class="py-20 px-6">
+<section id="about" class="py-20 px-6 reveal">
   <div class="max-w-5xl mx-auto text-center">
     <h2 class="text-3xl text-primary mb-6">About</h2>
 
@@ -106,14 +123,14 @@
     </p>
 
     <p class="text-gray-600">
-      His approach blends macro awareness with deep structural understanding — allowing him
-      to position ahead of market transitions rather than react to them.
+      His approach blends macro awareness with structural understanding — positioning ahead of transitions,
+      not reacting to them.
     </p>
   </div>
 </section>
 
-<!-- EXPERTISE GRID -->
-<section id="expertise" class="py-20 bg-white px-6">
+<!-- EXPERTISE -->
+<section id="expertise" class="py-20 bg-white px-6 reveal">
   <div class="max-w-7xl mx-auto">
     <h2 class="text-3xl text-primary text-center mb-12">Expertise</h2>
 
@@ -129,25 +146,23 @@
   </div>
 </section>
 
-<!-- INSIGHTS (RESTORED + SIDE-BY-SIDE) -->
+<!-- INSIGHTS -->
 <section id="insights" class="py-20 px-6">
   <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
 
-    <div>
+    <div class="reveal">
       <h2 class="text-3xl text-primary mb-6">Insights</h2>
 
       <p class="text-gray-600 mb-6">
-        Markets reward positioning, not reaction. The ability to interpret structure,
-        not noise, defines long-term outcomes.
+        Markets reward positioning, not reaction. The ability to interpret structure defines outcomes.
       </p>
 
       <p class="text-gray-600">
-        Stephen focuses on clarity — identifying signal early and positioning
-        before consensus forms.
+        Stephen focuses on clarity — identifying signal early and positioning before consensus forms.
       </p>
     </div>
 
-    <div class="bg-white p-8 rounded-xl shadow-sm">
+    <div class="bg-white p-8 rounded-xl shadow-sm reveal">
       <h3 class="text-primary mb-4 font-semibold">Key Principles</h3>
 
       <ul class="text-sm text-gray-600 space-y-3">
@@ -161,7 +176,7 @@
   </div>
 </section>
 
-<!-- BLOG (ALL 5 RESTORED) -->
+<!-- BLOG -->
 <section id="blog" class="py-20 px-6 bg-white">
   <div class="max-w-7xl mx-auto">
     <h2 class="text-3xl text-primary text-center mb-12">
@@ -170,36 +185,36 @@
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-      <!-- 5 FULL CARDS -->
-      <div class="p-6 bg-bgsoft rounded-xl card-hover">
+      <!-- 5 BLOG CARDS -->
+      <div class="p-6 bg-bgsoft rounded-xl card-hover reveal">
         <h3 class="font-semibold text-primary mb-2">Navigating Crypto Market Cycles in 2026</h3>
         <p class="text-sm text-gray-600 mb-3">Markets move in structured phases.</p>
         <p class="hidden text-sm text-gray-600" id="p1">Expansion → euphoria → contraction → reset.</p>
         <button onclick="togglePost('p1')" class="text-accent text-sm">Read More →</button>
       </div>
 
-      <div class="p-6 bg-bgsoft rounded-xl card-hover">
+      <div class="p-6 bg-bgsoft rounded-xl card-hover reveal">
         <h3 class="font-semibold text-primary mb-2">DeFi’s Next Chapter</h3>
-        <p class="text-sm text-gray-600 mb-3">Shift toward sustainable systems.</p>
-        <p class="hidden text-sm text-gray-600" id="p2">Real yield + efficiency define the next wave.</p>
+        <p class="text-sm text-gray-600 mb-3">Shift toward sustainability.</p>
+        <p class="hidden text-sm text-gray-600" id="p2">Real yield + efficiency dominate.</p>
         <button onclick="togglePost('p2')" class="text-accent text-sm">Read More →</button>
       </div>
 
-      <div class="p-6 bg-bgsoft rounded-xl card-hover">
+      <div class="p-6 bg-bgsoft rounded-xl card-hover reveal">
         <h3 class="font-semibold text-primary mb-2">Strategic Thinking in Volatility</h3>
         <p class="text-sm text-gray-600 mb-3">Clarity beats reaction.</p>
         <p class="hidden text-sm text-gray-600" id="p3">Preparation > emotion.</p>
         <button onclick="togglePost('p3')" class="text-accent text-sm">Read More →</button>
       </div>
 
-      <div class="p-6 bg-bgsoft rounded-xl card-hover">
+      <div class="p-6 bg-bgsoft rounded-xl card-hover reveal">
         <h3 class="font-semibold text-primary mb-2">On-Chain Opportunities</h3>
         <p class="text-sm text-gray-600 mb-3">Utility replacing speculation.</p>
         <p class="hidden text-sm text-gray-600" id="p4">Adoption drives value.</p>
         <button onclick="togglePost('p4')" class="text-accent text-sm">Read More →</button>
       </div>
 
-      <div class="p-6 bg-bgsoft rounded-xl card-hover">
+      <div class="p-6 bg-bgsoft rounded-xl card-hover reveal">
         <h3 class="font-semibold text-primary mb-2">Building Resilient Portfolios</h3>
         <p class="text-sm text-gray-600 mb-3">Durability matters.</p>
         <p class="hidden text-sm text-gray-600" id="p5">Structure for survival + upside.</p>
@@ -210,16 +225,15 @@
   </div>
 </section>
 
-<!-- FOOTER (AS REQUESTED) -->
+<!-- FOOTER -->
 <footer id="contact" class="py-16 text-center border-t bg-white">
-
   <p class="text-gray-500 mb-4">
     © 2026 Stephen Mar. All rights reserved.
   </p>
 
   <div class="mb-6">
     <a href="mailto:officialstephenmar@gmail.com"
-       class="px-6 py-3 border border-accent text-accent rounded-lg hover:bg-accent hover:text-white transition text-sm">
+       class="px-6 py-3 border border-accent text-accent rounded-lg hover:bg-accent hover:text-white">
        Get in touch
     </a>
   </div>
@@ -227,252 +241,23 @@
   <p class="text-sm text-gray-400">
     officialstephenmar@gmail.com
   </p>
-
 </footer>
 
 <script>
 function togglePost(id) {
   document.getElementById(id).classList.toggle("hidden");
 }
-</script>
 
-</body>
-</html><!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Stephen Mar — Crypto Investor</title>
-
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: '#081C34',
-            accent: '#C2A35D',
-            bgsoft: '#F8F7F4'
-          }
-        }
-      }
+/* Scroll reveal */
+const reveals = document.querySelectorAll(".reveal");
+window.addEventListener("scroll", () => {
+  reveals.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if (top < window.innerHeight - 100) {
+      el.classList.add("active");
     }
-  </script>
-
-  <style>
-    html { scroll-behavior: smooth; }
-
-    .card-hover:hover {
-      transform: translateY(-6px);
-      transition: all 0.35s ease;
-    }
-  </style>
-</head>
-
-<body class="bg-bgsoft text-gray-800">
-
-<!-- HEADER -->
-<header class="fixed top-0 w-full bg-bgsoft/90 backdrop-blur border-b z-50">
-  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-
-    <div class="text-xl font-semibold text-primary">Stephen Mar</div>
-
-    <nav class="hidden md:flex space-x-8 text-sm">
-      <a href="#about">About</a>
-      <a href="#expertise">Expertise</a>
-      <a href="#insights">Insights</a>
-      <a href="#blog">Blog</a>
-      <a href="#contact">Contact</a>
-    </nav>
-
-    <img src="assets/images/headshot.jpg"
-      class="w-12 h-12 md:w-16 md:h-16 object-cover object-top rounded-sm border" />
-  </div>
-</header>
-
-<!-- HERO + SIDE LAYOUT (PC UPGRADE) -->
-<section class="pt-32 pb-24 px-6">
-  <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-
-    <!-- LEFT -->
-    <div>
-      <h1 class="text-5xl md:text-6xl font-bold text-primary mb-6">
-        Stephen Mar
-      </h1>
-
-      <p class="text-lg text-gray-600 mb-8">
-        Crypto Investor • DeFi Strategist • Forward-Thinking Perspectives
-      </p>
-
-      <div class="flex gap-4 flex-wrap">
-        <a href="#insights" class="px-6 py-3 bg-primary text-white rounded-lg">
-          Explore Insights
-        </a>
-
-        <a href="https://twitter.com/iamstephenmar" target="_blank"
-          class="px-6 py-3 border border-accent text-accent rounded-lg hover:bg-accent hover:text-white">
-          Connect on X
-        </a>
-      </div>
-    </div>
-
-    <!-- RIGHT (INSIGHT PANEL) -->
-    <div class="bg-white p-8 rounded-xl shadow-sm">
-      <h3 class="text-primary font-semibold mb-4">Current Focus</h3>
-      <p class="text-sm text-gray-600 mb-4">
-        Monitoring liquidity shifts, DeFi structural evolution, and emerging narratives
-        shaping the next crypto cycle.
-      </p>
-
-      <h3 class="text-primary font-semibold mb-2">Core Approach</h3>
-      <p class="text-sm text-gray-600">
-        Position early. Think independently. Act with conviction.
-      </p>
-    </div>
-
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about" class="py-20 px-6">
-  <div class="max-w-5xl mx-auto text-center">
-    <h2 class="text-3xl text-primary mb-6">About</h2>
-
-    <p class="text-gray-600 mb-6">
-      Stephen Mar is a forward-thinking crypto investor focused on identifying asymmetric opportunities
-      across digital assets, DeFi, and emerging on-chain ecosystems.
-    </p>
-
-    <p class="text-gray-600">
-      His approach blends macro awareness with deep structural understanding — allowing him
-      to position ahead of market transitions rather than react to them.
-    </p>
-  </div>
-</section>
-
-<!-- EXPERTISE GRID -->
-<section id="expertise" class="py-20 bg-white px-6">
-  <div class="max-w-7xl mx-auto">
-    <h2 class="text-3xl text-primary text-center mb-12">Expertise</h2>
-
-    <div class="grid md:grid-cols-3 lg:grid-cols-5 gap-6">
-
-      <div class="p-6 bg-bgsoft rounded-xl card-hover">Market Cycles</div>
-      <div class="p-6 bg-bgsoft rounded-xl card-hover">DeFi Systems</div>
-      <div class="p-6 bg-bgsoft rounded-xl card-hover">Portfolio Strategy</div>
-      <div class="p-6 bg-bgsoft rounded-xl card-hover">Emerging Narratives</div>
-      <div class="p-6 bg-bgsoft rounded-xl card-hover">Strategic Foresight</div>
-
-    </div>
-  </div>
-</section>
-
-<!-- INSIGHTS (RESTORED + SIDE-BY-SIDE) -->
-<section id="insights" class="py-20 px-6">
-  <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
-
-    <div>
-      <h2 class="text-3xl text-primary mb-6">Insights</h2>
-
-      <p class="text-gray-600 mb-6">
-        Markets reward positioning, not reaction. The ability to interpret structure,
-        not noise, defines long-term outcomes.
-      </p>
-
-      <p class="text-gray-600">
-        Stephen focuses on clarity — identifying signal early and positioning
-        before consensus forms.
-      </p>
-    </div>
-
-    <div class="bg-white p-8 rounded-xl shadow-sm">
-      <h3 class="text-primary mb-4 font-semibold">Key Principles</h3>
-
-      <ul class="text-sm text-gray-600 space-y-3">
-        <li>• Capital flows define direction</li>
-        <li>• Narratives follow liquidity</li>
-        <li>• Conviction outperforms noise</li>
-        <li>• Patience compounds advantage</li>
-      </ul>
-    </div>
-
-  </div>
-</section>
-
-<!-- BLOG (ALL 5 RESTORED) -->
-<section id="blog" class="py-20 px-6 bg-white">
-  <div class="max-w-7xl mx-auto">
-    <h2 class="text-3xl text-primary text-center mb-12">
-      Latest Notes & Insights
-    </h2>
-
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-      <!-- 5 FULL CARDS -->
-      <div class="p-6 bg-bgsoft rounded-xl card-hover">
-        <h3 class="font-semibold text-primary mb-2">Navigating Crypto Market Cycles in 2026</h3>
-        <p class="text-sm text-gray-600 mb-3">Markets move in structured phases.</p>
-        <p class="hidden text-sm text-gray-600" id="p1">Expansion → euphoria → contraction → reset.</p>
-        <button onclick="togglePost('p1')" class="text-accent text-sm">Read More →</button>
-      </div>
-
-      <div class="p-6 bg-bgsoft rounded-xl card-hover">
-        <h3 class="font-semibold text-primary mb-2">DeFi’s Next Chapter</h3>
-        <p class="text-sm text-gray-600 mb-3">Shift toward sustainable systems.</p>
-        <p class="hidden text-sm text-gray-600" id="p2">Real yield + efficiency define the next wave.</p>
-        <button onclick="togglePost('p2')" class="text-accent text-sm">Read More →</button>
-      </div>
-
-      <div class="p-6 bg-bgsoft rounded-xl card-hover">
-        <h3 class="font-semibold text-primary mb-2">Strategic Thinking in Volatility</h3>
-        <p class="text-sm text-gray-600 mb-3">Clarity beats reaction.</p>
-        <p class="hidden text-sm text-gray-600" id="p3">Preparation > emotion.</p>
-        <button onclick="togglePost('p3')" class="text-accent text-sm">Read More →</button>
-      </div>
-
-      <div class="p-6 bg-bgsoft rounded-xl card-hover">
-        <h3 class="font-semibold text-primary mb-2">On-Chain Opportunities</h3>
-        <p class="text-sm text-gray-600 mb-3">Utility replacing speculation.</p>
-        <p class="hidden text-sm text-gray-600" id="p4">Adoption drives value.</p>
-        <button onclick="togglePost('p4')" class="text-accent text-sm">Read More →</button>
-      </div>
-
-      <div class="p-6 bg-bgsoft rounded-xl card-hover">
-        <h3 class="font-semibold text-primary mb-2">Building Resilient Portfolios</h3>
-        <p class="text-sm text-gray-600 mb-3">Durability matters.</p>
-        <p class="hidden text-sm text-gray-600" id="p5">Structure for survival + upside.</p>
-        <button onclick="togglePost('p5')" class="text-accent text-sm">Read More →</button>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER (AS REQUESTED) -->
-<footer id="contact" class="py-16 text-center border-t bg-white">
-
-  <p class="text-gray-500 mb-4">
-    © 2026 Stephen Mar. All rights reserved.
-  </p>
-
-  <div class="mb-6">
-    <a href="mailto:officialstephenmar@gmail.com"
-       class="px-6 py-3 border border-accent text-accent rounded-lg hover:bg-accent hover:text-white transition text-sm">
-       Get in touch
-    </a>
-  </div>
-
-  <p class="text-sm text-gray-400">
-    officialstephenmar@gmail.com
-  </p>
-
-</footer>
-
-<script>
-function togglePost(id) {
-  document.getElementById(id).classList.toggle("hidden");
-}
+  });
+});
 </script>
 
 </body>

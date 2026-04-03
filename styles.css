@@ -1,41 +1,49 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
 
-:root {
-  --accent-tan: #d2b48c;
+body {
+  font-family: 'Inter', system-ui, sans-serif;
 }
 
-body { font-family: 'Inter', system-ui, sans-serif; }
-.logo-font { font-family: 'Space Grotesk', sans-serif; }
-
-.hero-bg {
-  background: linear-gradient(180deg, #f5f0e6 0%, #f8f5ed 100%);
+.logo-font {
+  font-family: 'Space Grotesk', sans-serif;
 }
 
-/* IMAGE FIX – Larger container + heavy internal padding for full head visibility */
-.headshot-container {
-  width: 460px;
-  height: 460px;
+.accent-tan {
+  color: #d2b48c;
+}
+
+/* NEW HEADSHOT CONTAINER – Extra large with massive padding for full head visibility */
+.headshot-wrapper {
+  width: 580px;
+  height: 580px;
+  margin: 0 auto;
   border-radius: 9999px;
-  border: 14px solid #ffffff;
-  box-shadow: 0 30px 60px -15px rgb(210 180 140 / 0.25);
+  border: 20px solid #ffffff;
   overflow: hidden;
+  box-shadow: 0 40px 70px -20px rgba(0, 0, 0, 0.1);
   background: #ffffff;
 }
 
-.headshot-img {
+.headshot {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  object-position: center;
-  padding: 40px; /* This extra padding prevents any head cropping */
+  
+  object-position: center top;
+  padding: 80px; /* Generous padding ensures full head is visible */
 }
 
-.headshot-container:hover .headshot-img {
-  transform: scale(1.05);
-  transition: transform 0.5s ease;
+.headshot-wrapper:hover .headshot {
+  transform: scale(1.03);
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Other premium styles */
-.accent-tan { color: var(--accent-tan); }
-.cta-button:hover { transform: translateY(-3px); }
-.conviction-card:hover { transform: translateY(-6px); box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.15); }
+.thinking-card {
+  padding: 2rem 0;
+  border-top: 1px solid #e5e0d3;
+}
+
+.thinking-card:first-child {
+  border-top: none;
+}
+

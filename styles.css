@@ -4,35 +4,22 @@
   --accent-tan: #d2b48c;
 }
 
-body {
-  font-family: 'Inter', system-ui, sans-serif;
-}
-
-.logo-font {
-  font-family: 'Space Grotesk', sans-serif;
-}
+body { font-family: 'Inter', system-ui, sans-serif; }
+.logo-font { font-family: 'Space Grotesk', sans-serif; }
 
 .hero-bg {
   background: linear-gradient(180deg, #f5f0e6 0%, #f8f5ed 100%);
 }
 
-/* HEADSHOT – FINAL FIX: guaranteed full fit, no cropping */
+/* IMAGE FIX – Larger container + heavy internal padding for full head visibility */
 .headshot-container {
-  width: 420px;
-  height: 420px;
+  width: 460px;
+  height: 460px;
   border-radius: 9999px;
-  border: 12px solid #ffffff;
-  box-shadow: 30px 30px 60px -15px rgb(210 180 140 / 0.25);
+  border: 14px solid #ffffff;
+  box-shadow: 0 30px 60px -15px rgb(210 180 140 / 0.25);
   overflow: hidden;
   background: #ffffff;
-  flex-shrink: 0;
-}
-
-@media (min-width: 768px) {
-  .headshot-container {
-    width: 480px;
-    height: 480px;
-  }
 }
 
 .headshot-img {
@@ -40,39 +27,15 @@ body {
   height: 100%;
   object-fit: contain;
   object-position: center;
-  padding: 28px; /* generous breathing room so head is never cut */
-  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 40px; /* This extra padding prevents any head cropping */
 }
 
 .headshot-container:hover .headshot-img {
-  transform: scale(1.04);
+  transform: scale(1.05);
+  transition: transform 0.5s ease;
 }
 
-/* Premium card & button polish */
-.conviction-card,
-.insight-card,
-.note-card,
-.cta-button {
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.conviction-card:hover,
-.insight-card:hover,
-.note-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.15);
-}
-
-.cta-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 25px -5px rgb(210 180 140 / 0.3);
-}
-
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
-}
-
-/* Section spacing */
-section {
-  scroll-margin-top: 90px;
-}
+/* Other premium styles */
+.accent-tan { color: var(--accent-tan); }
+.cta-button:hover { transform: translateY(-3px); }
+.conviction-card:hover { transform: translateY(-6px); box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.15); }

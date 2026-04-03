@@ -6,20 +6,21 @@ A clean, minimalist, dark-themed single-page website for Stephen Mar, entreprene
 - Premium dark aesthetic with teal and gold accents
 - Fully responsive (mobile-first)
 - Smooth scrolling navigation
+- Single high-quality headshot (`headshot.jpg`)
+- Real-time "Recent Notes" blog-style section (easy to update)
 - Institutional-grade, no-hype design
 - Tailwind CSS via CDN (zero build step)
 
 ## Deployment (GitHub Pages)
 
-1. Create a new GitHub repository.
-2. Upload `index.html` and `README.md`.
-3. Go to **Settings → Pages**.
-4. Set source to **Deploy from a branch** → `main` → `/ (root)`.
-5. Your site will be live at `https://<username>.github.io/<repo-name>`.
+1. Upload `index.html`, `headshot.jpg`, and `README.md` to your repository root.
+2. Go to **Settings → Pages**.
+3. Set source to **Deploy from a branch** → `main` → `/ (root)`.
+4. Your site will be live at `https://<username>.github.io/<repo-name>`.
 
-## Customization
-- Replace the headshot URL if needed.
-- Update bio, conviction quotes, or insights to match your latest thinking.
-- Add more social links in the footer/connect section.
+## Customization Tips
+- Replace `headshot.jpg` with your preferred image (keep the filename).
+- Edit the "Recent Notes" section directly in `index.html` to keep it feeling real-time.
+- Update conviction quotes, market thinking cards, or focus-area copy as needed.
 
 Made with quiet confidence and strategic clarity.

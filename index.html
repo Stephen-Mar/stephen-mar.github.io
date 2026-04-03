@@ -24,25 +24,65 @@
   <style>
     html { scroll-behavior: smooth; }
 
-    /* Smooth reveal animation */
+    /* Reveal + transitions */
     .reveal {
       opacity: 0;
       transform: translateY(40px);
       transition: all 0.8s ease;
     }
-
     .reveal.active {
       opacity: 1;
       transform: translateY(0);
     }
 
-    /* Premium hover */
+    /* Card hover + glow */
+    .card-hover {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
     .card-hover:hover {
-      transform: translateY(-8px) scale(1.01);
-      transition: all 0.3s ease;
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.12);
     }
 
-    /* Hero gradient glow */
+    /* Hero button glow */
+    .cta-btn {
+      transition: all 0.3s ease;
+    }
+    .cta-btn:hover {
+      box-shadow: 0 0 15px rgba(194,163,93,0.5);
+      transform: translateY(-2px);
+    }
+
+    /* Modal overlay */
+    .modal {
+      display: none;
+      position: fixed;
+      top:0; left:0; right:0; bottom:0;
+      background: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+      z-index: 100;
+    }
+    .modal.active { display: flex; }
+    .modal-content {
+      background: white;
+      max-width: 600px;
+      padding: 2rem;
+      border-radius: 0.5rem;
+      max-height: 80vh;
+      overflow-y: auto;
+      position: relative;
+    }
+    .modal-close {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 1.25rem;
+    }
+
+    /* Hero background subtle gradient */
     .hero-bg {
       background: radial-gradient(circle at top right, rgba(194,163,93,0.15), transparent 40%);
     }
@@ -54,7 +94,6 @@
 <!-- HEADER -->
 <header class="fixed top-0 w-full bg-bgsoft/90 backdrop-blur border-b z-50">
   <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-
     <div class="text-xl font-semibold text-primary">Stephen Mar</div>
 
     <nav class="hidden md:flex space-x-8 text-sm">
@@ -75,37 +114,29 @@
   <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
 
     <div class="reveal">
-      <h1 class="text-5xl md:text-6xl font-bold text-primary mb-6">
-        Stephen Mar
-      </h1>
+      <h1 class="text-5xl md:text-6xl font-bold text-primary mb-6">Stephen Mar</h1>
 
       <p class="text-lg text-gray-600 mb-8">
         Crypto Investor • DeFi Strategist • Forward-Thinking Perspectives
       </p>
 
       <div class="flex gap-4 flex-wrap">
-        <a href="#insights" class="px-6 py-3 bg-primary text-white rounded-lg shadow">
-          Explore Insights
-        </a>
-
+        <a href="#insights" class="cta-btn px-6 py-3 bg-primary text-white rounded-lg shadow">Explore Insights</a>
         <a href="https://twitter.com/iamstephenmar" target="_blank"
-          class="px-6 py-3 border border-accent text-accent rounded-lg hover:bg-accent hover:text-white">
+          class="cta-btn px-6 py-3 border border-accent text-accent rounded-lg hover:bg-accent hover:text-white">
           Connect on X
         </a>
       </div>
     </div>
 
-    <!-- FEATURED INSIGHT -->
+    <!-- Featured Insight Panel -->
     <div class="bg-white p-8 rounded-xl shadow-sm reveal">
       <h3 class="text-primary font-semibold mb-4">Featured Insight</h3>
-
       <p class="text-gray-600 mb-4">
-        The market doesn’t reward the most informed — it rewards the best positioned.
+        Markets reward the best positioned, not the most informed. Clarity before consensus is the edge.
       </p>
-
       <p class="text-sm text-gray-500">
-        Most participants wait for confirmation. By then, opportunity has already moved.
-        The edge comes from clarity before consensus.
+        By observing flows, narratives, and liquidity, one can anticipate opportunities before they appear mainstream.
       </p>
     </div>
 
@@ -116,15 +147,11 @@
 <section id="about" class="py-20 px-6 reveal">
   <div class="max-w-5xl mx-auto text-center">
     <h2 class="text-3xl text-primary mb-6">About</h2>
-
     <p class="text-gray-600 mb-6">
-      Stephen Mar is a forward-thinking crypto investor focused on identifying asymmetric opportunities
-      across digital assets, DeFi, and emerging on-chain ecosystems.
+      Stephen Mar is a forward-thinking crypto investor focused on asymmetric opportunities across digital assets, DeFi, and on-chain ecosystems.
     </p>
-
     <p class="text-gray-600">
-      His approach blends macro awareness with structural understanding — positioning ahead of transitions,
-      not reacting to them.
+      Blending macro awareness with structural understanding, he positions ahead of transitions rather than reacting.
     </p>
   </div>
 </section>
@@ -133,15 +160,12 @@
 <section id="expertise" class="py-20 bg-white px-6 reveal">
   <div class="max-w-7xl mx-auto">
     <h2 class="text-3xl text-primary text-center mb-12">Expertise</h2>
-
     <div class="grid md:grid-cols-3 lg:grid-cols-5 gap-6">
-
       <div class="p-6 bg-bgsoft rounded-xl card-hover">Market Cycles</div>
       <div class="p-6 bg-bgsoft rounded-xl card-hover">DeFi Systems</div>
       <div class="p-6 bg-bgsoft rounded-xl card-hover">Portfolio Strategy</div>
       <div class="p-6 bg-bgsoft rounded-xl card-hover">Emerging Narratives</div>
       <div class="p-6 bg-bgsoft rounded-xl card-hover">Strategic Foresight</div>
-
     </div>
   </div>
 </section>
@@ -152,11 +176,9 @@
 
     <div class="reveal">
       <h2 class="text-3xl text-primary mb-6">Insights</h2>
-
       <p class="text-gray-600 mb-6">
         Markets reward positioning, not reaction. The ability to interpret structure defines outcomes.
       </p>
-
       <p class="text-gray-600">
         Stephen focuses on clarity — identifying signal early and positioning before consensus forms.
       </p>
@@ -164,7 +186,6 @@
 
     <div class="bg-white p-8 rounded-xl shadow-sm reveal">
       <h3 class="text-primary mb-4 font-semibold">Key Principles</h3>
-
       <ul class="text-sm text-gray-600 space-y-3">
         <li>• Capital flows define direction</li>
         <li>• Narratives follow liquidity</li>
@@ -179,46 +200,39 @@
 <!-- BLOG -->
 <section id="blog" class="py-20 px-6 bg-white">
   <div class="max-w-7xl mx-auto">
-    <h2 class="text-3xl text-primary text-center mb-12">
-      Latest Notes & Insights
-    </h2>
+    <h2 class="text-3xl text-primary text-center mb-12">Latest Notes & Insights</h2>
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-      <!-- 5 BLOG CARDS -->
+      <!-- BLOG CARDS WITH MODAL INTEGRATION -->
       <div class="p-6 bg-bgsoft rounded-xl card-hover reveal">
         <h3 class="font-semibold text-primary mb-2">Navigating Crypto Market Cycles in 2026</h3>
         <p class="text-sm text-gray-600 mb-3">Markets move in structured phases.</p>
-        <p class="hidden text-sm text-gray-600" id="p1">Expansion → euphoria → contraction → reset.</p>
-        <button onclick="togglePost('p1')" class="text-accent text-sm">Read More →</button>
+        <button onclick="openModal('m1')" class="text-accent text-sm">Read More →</button>
       </div>
 
       <div class="p-6 bg-bgsoft rounded-xl card-hover reveal">
         <h3 class="font-semibold text-primary mb-2">DeFi’s Next Chapter</h3>
-        <p class="text-sm text-gray-600 mb-3">Shift toward sustainability.</p>
-        <p class="hidden text-sm text-gray-600" id="p2">Real yield + efficiency dominate.</p>
-        <button onclick="togglePost('p2')" class="text-accent text-sm">Read More →</button>
+        <p class="text-sm text-gray-600 mb-3">Shift toward sustainable systems.</p>
+        <button onclick="openModal('m2')" class="text-accent text-sm">Read More →</button>
       </div>
 
       <div class="p-6 bg-bgsoft rounded-xl card-hover reveal">
         <h3 class="font-semibold text-primary mb-2">Strategic Thinking in Volatility</h3>
         <p class="text-sm text-gray-600 mb-3">Clarity beats reaction.</p>
-        <p class="hidden text-sm text-gray-600" id="p3">Preparation > emotion.</p>
-        <button onclick="togglePost('p3')" class="text-accent text-sm">Read More →</button>
+        <button onclick="openModal('m3')" class="text-accent text-sm">Read More →</button>
       </div>
 
       <div class="p-6 bg-bgsoft rounded-xl card-hover reveal">
         <h3 class="font-semibold text-primary mb-2">On-Chain Opportunities</h3>
         <p class="text-sm text-gray-600 mb-3">Utility replacing speculation.</p>
-        <p class="hidden text-sm text-gray-600" id="p4">Adoption drives value.</p>
-        <button onclick="togglePost('p4')" class="text-accent text-sm">Read More →</button>
+        <button onclick="openModal('m4')" class="text-accent text-sm">Read More →</button>
       </div>
 
       <div class="p-6 bg-bgsoft rounded-xl card-hover reveal">
         <h3 class="font-semibold text-primary mb-2">Building Resilient Portfolios</h3>
         <p class="text-sm text-gray-600 mb-3">Durability matters.</p>
-        <p class="hidden text-sm text-gray-600" id="p5">Structure for survival + upside.</p>
-        <button onclick="togglePost('p5')" class="text-accent text-sm">Read More →</button>
+        <button onclick="openModal('m5')" class="text-accent text-sm">Read More →</button>
       </div>
 
     </div>
@@ -227,25 +241,63 @@
 
 <!-- FOOTER -->
 <footer id="contact" class="py-16 text-center border-t bg-white">
-  <p class="text-gray-500 mb-4">
-    © 2026 Stephen Mar. All rights reserved.
-  </p>
-
+  <p class="text-gray-500 mb-4">© 2026 Stephen Mar. All rights reserved.</p>
   <div class="mb-6">
     <a href="mailto:officialstephenmar@gmail.com"
        class="px-6 py-3 border border-accent text-accent rounded-lg hover:bg-accent hover:text-white">
        Get in touch
     </a>
   </div>
-
-  <p class="text-sm text-gray-400">
-    officialstephenmar@gmail.com
-  </p>
+  <p class="text-sm text-gray-400">officialstephenmar@gmail.com</p>
 </footer>
 
+<!-- MODALS FOR BLOG POSTS -->
+<div id="m1" class="modal">
+  <div class="modal-content">
+    <span class="modal-close" onclick="closeModal('m1')">&times;</span>
+    <h3 class="font-semibold text-primary mb-4">Navigating Crypto Market Cycles in 2026</h3>
+    <p>Expansion → euphoria → contraction → reset. Understanding cycle phases is critical to position ahead of major moves. Liquidity and market sentiment indicators are key to predicting transitions.</p>
+  </div>
+</div>
+
+<div id="m2" class="modal">
+  <div class="modal-content">
+    <span class="modal-close" onclick="closeModal('m2')">&times;</span>
+    <h3 class="font-semibold text-primary mb-4">DeFi’s Next Chapter</h3>
+    <p>The next wave focuses on sustainable protocols, real yield, efficiency, and long-term incentive alignment. Noise fades; utility drives adoption.</p>
+  </div>
+</div>
+
+<div id="m3" class="modal">
+  <div class="modal-content">
+    <span class="modal-close" onclick="closeModal('m3')">&times;</span>
+    <h3 class="font-semibold text-primary mb-4">Strategic Thinking in Volatility</h3>
+    <p>Clear frameworks outperform impulsive reactions. Risk management, scenario planning, and conviction-based decisions compound over time.</p>
+  </div>
+</div>
+
+<div id="m4" class="modal">
+  <div class="modal-content">
+    <span class="modal-close" onclick="closeModal('m4')">&times;</span>
+    <h3 class="font-semibold text-primary mb-4">On-Chain Opportunities</h3>
+    <p>Utility replaces speculation. Adoption patterns and composable protocols create real economic value and long-term alpha.</p>
+  </div>
+</div>
+
+<div id="m5" class="modal">
+  <div class="modal-content">
+    <span class="modal-close" onclick="closeModal('m5')">&times;</span>
+    <h3 class="font-semibold text-primary mb-4">Building Resilient Portfolios</h3>
+    <p>Durable portfolios balance risk and upside. Structure for survival and capitalize on emerging tech trends. Focus on resilience across cycles.</p>
+  </div>
+</div>
+
 <script>
-function togglePost(id) {
-  document.getElementById(id).classList.toggle("hidden");
+function openModal(id) {
+  document.getElementById(id).classList.add('active');
+}
+function closeModal(id) {
+  document.getElementById(id).classList.remove('active');
 }
 
 /* Scroll reveal */
@@ -253,9 +305,7 @@ const reveals = document.querySelectorAll(".reveal");
 window.addEventListener("scroll", () => {
   reveals.forEach(el => {
     const top = el.getBoundingClientRect().top;
-    if (top < window.innerHeight - 100) {
-      el.classList.add("active");
-    }
+    if (top < window.innerHeight - 100) el.classList.add("active");
   });
 });
 </script>
